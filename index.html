@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona-Map</title>
+
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #marker {
+            cursor: pointer;
+        }
+
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+</body>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicnVrYXRoMSIsImEiOiJja250dDI4YWQwNWI5MnRsZGNnNTliZTF0In0._vaf-NTsyjFd4MeQEpoeVQ';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',//we wrote 'dark-v10' insread of 'streets-v11' to change the theme from dark to
+        zoom: 1,
+        center: [0, 20]
+    });
+    var popup = new mapboxgl.Popup({ offset: 25 }).setText(
+        'this is a popup'
+    );
+</script>
+<script src="index.js"></script>
+
+</html>
